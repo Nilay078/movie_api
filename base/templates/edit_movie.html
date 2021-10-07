@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit_Movie</title>
+</head>
+<body>
+<center>
+    <h1>Edit Movie</h1>
+    <form novalidate action="/update_movie" method="post">
+        Name: <input type="text" name="Name" value="{{ movie_vo_list[0]['movie_name'] }}"><br>
+        Timing: <input type="text" name="Timing" value="{{ movie_vo_list[0]['movie_timing'] }}"><br>
+        Location: <input type="text" name="Location" value="{{ movie_vo_list[0]['movie_location'] }}"><br>
+        <input type="submit">
+        <input type="hidden" name="movieId" value="{{ movie_vo_list[0]['movie_id'] }}">
+    </form>
+    <form action="/view_movie">
+        <input type="submit" value="Cancle">
+    </form>
+</center>
+</body>
+</html>

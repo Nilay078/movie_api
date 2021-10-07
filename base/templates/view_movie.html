@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View_movie</title>
+</head>
+<body>
+<center>
+    <h1>Movie List</h1>
+    <table border="2">
+        <thead>
+        <tr>
+            <th>Movie Name</th>
+            <th>Movie Timing</th>
+            <th>Movie Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in movie_vo_list %}
+        <tr>
+            <td>{{ row['movie_name'] }}</td>
+            <td>{{ row['movie_timing'] }}</td>
+            <td>{{ row['movie_location'] }}</td>
+            <td>
+                <a href="/edit_movie?movieId={{ row['movie_id'] }}">Edit</a>
+                <a href="/delete_movie?movieId={{ row['movie_id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    <form action="/home">
+        <input type="submit" value="Add Movie">
+    </form>
+</center>
+</body>
+</html>
